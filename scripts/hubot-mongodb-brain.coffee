@@ -33,6 +33,8 @@ module.exports = (robot) ->
 
     robot.logger.info "MongoDB connected"
     robot.brain.setAutoSave false
+    robot.logger.info "Decorating robot with mongo db"
+    robot.brain.db = db
 
     cache = {}
 
