@@ -1,5 +1,5 @@
 {
-  "name": "hubot-mongodb-brain",
+  "name": "@engyalo/hubot-mongodb-brain",
   "version": "0.1.2",
   "description": "MongoDB brain for Hubot. Support MongoLab and MongoHQ on heroku",
   "main": "scripts/hubot-mongodb-brain.coffee",
