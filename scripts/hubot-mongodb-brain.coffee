@@ -56,7 +56,6 @@ module.exports = (robot) ->
         for k,v of data._private
           do (k,v) ->
             return if _.isEqual cache[k], v  # skip not modified key
-            robot.logger.debug "save \"#{k}\" into mongodb-brain"
             cache[k] = deepClone v
             collection.update
               type: '_private'
