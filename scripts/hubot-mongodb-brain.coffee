@@ -20,6 +20,7 @@ MongoClient = require('mongodb').MongoClient
 deepClone = (obj) -> JSON.parse JSON.stringify obj
 
 module.exports = (robot) ->
+  resetSaveInterval = process.env.MONGODB_SAVE_INTERVAL or 10
   mongoUrl = process.env.MONGODB_URL or
              process.env.MONGOLAB_URI or
              process.env.MONGOHQ_URL or
@@ -47,7 +48,7 @@ module.exports = (robot) ->
           _private[doc.key] = doc.value
         cache = deepClone _private
         robot.brain.mergeData {_private: _private}
-        robot.brain.resetSaveInterval 10
+        robot.brain.resetSaveInterval resetSaveInterval
         robot.brain.setAutoSave true
 
     ## save data into mongodb
