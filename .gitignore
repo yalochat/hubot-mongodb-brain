@@ -5,3 +5,4 @@ node_modules
 tmp
 *.log
 .hubot_history
+.vscode/
